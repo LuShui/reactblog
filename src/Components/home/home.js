@@ -1,10 +1,10 @@
 import React from 'react'
 import ListComponent from '../list/list'
 import TypeComponent from './type'
-import { connect } from 'react-redux';
-import {baseAction} from '../../Redux/actions/index'
+// import { connect } from 'react-redux';
+// import {baseAction} from '../../Redux/actions/index'
 
-var typeindex = 1;
+// var typeindex = 1;
 class HomeComponent extends React.Component{
 
     constructor(){
@@ -13,18 +13,28 @@ class HomeComponent extends React.Component{
     }
 
     componentDidMount(){
-        let {dispatch} = this.props;
-        dispatch(baseAction(typeindex));
+        // let {dispatch} = this.props;
+        // dispatch(baseAction(typeindex));
     }
 
     clickfunc(type){
-        let {dispatch} = this.props;
-        typeindex = type;
-        dispatch(baseAction(typeindex));
+        // let {dispatch} = this.props;
+        //typeindex = type;
+        // dispatch(baseAction(typeindex));
     }
 
     render(){
-        let array = this.props.array;
+        let array = [{
+            'id':1
+        },{
+            'id':2
+        },{
+            'id':3
+        },{
+            'id':4
+        },{
+            'id':5
+        }];//this.props.array;
         return(
             <div>
                 <TypeComponent onclickfunc={this.clickfunc}/>
@@ -40,4 +50,5 @@ function soure(state) {
         array:state.array
     }
 }
-export default connect(soure)(HomeComponent);
+// export default connect(soure)(HomeComponent);
+export default HomeComponent;

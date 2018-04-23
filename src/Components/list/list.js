@@ -9,7 +9,7 @@ import {  browserHistory } from 'react-router';
 class ListComponent extends React.Component{
 
     render(){
-        let array = this.props.array;
+        let array = [1,2,3,4,5,6,7,8];//this.props.array;
         return(
             <div>
                 {array.map((item,index)=><LiComponent value={item} key={index.toString()}/>)}
@@ -26,6 +26,7 @@ class LiComponent extends React.Component{
 
     onclickfunc(){
         let json = this.props.value;
+        console.log(json)
         browserHistory.push('/list/'+ json.id);
     }
 
